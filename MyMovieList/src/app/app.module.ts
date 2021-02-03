@@ -13,9 +13,10 @@ import {PortalModule} from "./portal-module/portal.module";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+
     LoginModule,
     PortalModule,
+    AppRoutingModule,
 
   ],
   providers: [],
