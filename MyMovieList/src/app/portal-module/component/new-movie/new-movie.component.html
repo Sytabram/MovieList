@@ -1,0 +1,58 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+</head>
+<body>
+<div>
+  <h1 mat-dialog-title>New Movie</h1>
+  <a>
+    <ngb-rating [max]="5" [(rate)]="movie.rating" [readonly]="false"></ngb-rating>
+  </a>
+
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="" [(ngModel)]="movie.name">
+        <mat-icon matSuffix>movie</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="" [(ngModel)]="movie.description"></textarea>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Year</mat-label>
+        <input matInput placeholder="" [(ngModel)]="movie.year">
+        <mat-icon matSuffix>date_range</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Time</mat-label>
+        <input matInput placeholder="(Minutes)" [(ngModel)]="movie.time">
+        <mat-icon matSuffix>av_timer</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+
+    <label>Category</label>
+    <input [(ngModel)]="movie.categoryID"
+           type="text">
+    </p>
+    <p>
+    <label>Studio</label>
+    <input [(ngModel)]="movie.StudioID"
+           type="text">
+    </p>
+
+  </div>
+
+  <mat-dialog-actions>
+    <button mat-button (click)="saveMovie()"> Save</button>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</body>

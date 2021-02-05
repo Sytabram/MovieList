@@ -1,5 +1,9 @@
 <div id="header">
-  <div id="body"><app-movies *ngFor="let currentMovie of movies"
+  <div id="body">
+    <div>
+      <button mat-button (click)="openDialog()">Launch dialog</button>
+    </div>
+    <app-movies *ngFor="let currentMovie of movies"
                              [movie]="currentMovie"></app-movies>
   </div>
 

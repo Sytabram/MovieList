@@ -10,6 +10,7 @@ import {DashboardMoviesComponent} from "./component/dashboard-movies/dashboard-m
 
 
 
+
 const routes: Routes = [
   {
     path: 'portal',

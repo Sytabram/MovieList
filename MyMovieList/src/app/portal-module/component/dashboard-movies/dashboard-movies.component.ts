@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Movie} from "../../model/movie";
 import {MovieService} from "../../service/movie.service";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {NewMovieComponent} from "../new-movie/new-movie.component";
 
 @Component({
   selector: 'app-dashboard-movies',
@@ -9,7 +11,7 @@ import {MovieService} from "../../service/movie.service";
 })
 export class DashboardMoviesComponent implements OnInit {
   movies!: Array<Movie>;
-  constructor(private _movieService: MovieService) { }
+  constructor(public dialog: MatDialog, private _movieService: MovieService) { }
 
   ngOnInit(): void {
     this.onGetMovies()
@@ -29,5 +31,8 @@ export class DashboardMoviesComponent implements OnInit {
       { }
     );
   }
-
+  openDialog() {
+    this.dialog.open(NewMovieComponent);
+  }
 }
+
