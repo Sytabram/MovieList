@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {LoginModule} from './login-module/login.module';
 import {PortalModule} from "./portal-module/portal.module";
+import {HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -13,10 +15,11 @@ import {PortalModule} from "./portal-module/portal.module";
   ],
   imports: [
     BrowserModule,
-
     LoginModule,
     PortalModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

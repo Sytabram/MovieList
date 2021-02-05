@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthService} from "../../../login-module/service/auth.service";
+import {Login} from "../../../login-module/model/login";
 
 @Component({
   selector: 'app-portal',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortalComponent implements OnInit {
 
-  constructor() { }
+  login!: Login;
+  constructor(private authService: AuthService) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.login = this.authService.loginModel;
+  }
+  onLogout(): void
+  {
+    this.authService.logout();
+  }
 }
+
+

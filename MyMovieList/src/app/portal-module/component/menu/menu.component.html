@@ -1,9 +1,7 @@
 <div id="body">
-  <a >Home</a>
-  <p id="txt">Hi {{login.username}}</p>
-  <p id="txt"
-     style="cursor:pointer;"
-     (click)="onLogout()">
-    <b>Logout</b>
-  </p>
+    <a href="" [routerLink]="['movies']">movie</a>
+    <a href="" [routerLink]="['categories']">category</a>
+    <a href="" [routerLink]="['studios']">stuido</a>
 </div>
+
+<router-outlet></router-outlet>

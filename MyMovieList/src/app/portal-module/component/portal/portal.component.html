@@ -1,8 +1,14 @@
-<div id="header">
-  <app-menu></app-menu>
+<div id="body">
+  <mat-toolbar>
+    <h1>My Movie List</h1>
+      <span href="" [routerLink]="['movies']">Movie</span>
+      <span href="" [routerLink]="['categories']">Category</span>
+      <span href="" [routerLink]="['studios']">Studio</span>
+      <span class = "spacer"></span>
+      <span id="logout" (click)="onLogout()"> {{login.username}} <mat-icon>exit_to_app</mat-icon></span>
+  </mat-toolbar>
+
+
 </div>
-<div id="content">
-  <div id="body-content">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+
+<router-outlet></router-outlet>

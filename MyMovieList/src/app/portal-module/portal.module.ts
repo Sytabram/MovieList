@@ -8,16 +8,21 @@ import {FormsModule} from "@angular/forms";
 import { MoviesComponent } from './component/movies/movies.component';
 import { StudiosComponent } from './component/studios/studios.component';
 import { CategoriesComponent } from './component/categories/categories.component';
+import { DashboardMoviesComponent } from './component/dashboard-movies/dashboard-movies.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import { MatIconModule} from "@angular/material/icon";
 
 
 
 @NgModule({
-  declarations: [PortalComponent, MenuComponent, MoviesComponent, StudiosComponent, CategoriesComponent],
+  declarations: [PortalComponent, MenuComponent, MoviesComponent, StudiosComponent, CategoriesComponent, DashboardMoviesComponent],
   imports: [
     CommonModule,
     BrowserModule,
     PortalRoutingModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule,
+    MatIconModule,
 
   ]
 })
