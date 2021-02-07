@@ -1,3 +1,4 @@
+import {Category} from "./category";
 export interface Movie {
     id : number;
     name : string;
@@ -6,6 +7,5 @@ export interface Movie {
     rating : number;
     time : number;
     year : number;
-    categoryID : number;
-    StudioID : number;
+
 }

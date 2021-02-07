@@ -17,12 +17,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { DialogMovieComponent } from './component/dialog-movie/dialog-movie.component';
 
 
 
 
 @NgModule({
-  declarations: [PortalComponent, MoviesComponent, StudiosComponent, CategoriesComponent, DashboardMoviesComponent, NewMovieComponent],
+  declarations: [PortalComponent, MoviesComponent, StudiosComponent, CategoriesComponent, DashboardMoviesComponent, NewMovieComponent, DialogMovieComponent],
   imports: [
     CommonModule,
     BrowserModule,

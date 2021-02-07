@@ -1,7 +1,5 @@
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
-</head>
-<body>
+
+<mat-dialog-content>
 <div>
   <h1 mat-dialog-title>New Movie</h1>
   <a>
@@ -36,23 +34,10 @@
         <mat-icon matSuffix>av_timer</mat-icon>
       </mat-form-field>
     </p>
-
-    <p>
-
-    <label>Category</label>
-    <input [(ngModel)]="movie.categoryID"
-           type="text">
-    </p>
-    <p>
-    <label>Studio</label>
-    <input [(ngModel)]="movie.StudioID"
-           type="text">
-    </p>
-
   </div>
 
   <mat-dialog-actions>
     <button mat-button (click)="saveMovie()"> Save</button>
     <button mat-button mat-dialog-close>Close</button>
   </mat-dialog-actions>
-</body>
+</mat-dialog-content>

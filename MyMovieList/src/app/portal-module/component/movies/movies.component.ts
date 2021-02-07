@@ -1,6 +1,8 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, Inject} from '@angular/core';
 import {MovieService} from "../../service/movie.service";
 import {Movie} from "../../model/movie";
+import {MatDialog, MAT_DIALOG_DATA, MatDialogConfig} from "@angular/material/dialog";
+import {DialogMovieComponent} from "../dialog-movie/dialog-movie.component";
 
 
 @Component({
@@ -12,10 +14,28 @@ export class MoviesComponent implements OnInit {
 
   @Input() movie!: Movie;
   @Output() movieSelected = new EventEmitter<Movie>();
-  constructor() { }
+
+  constructor(public dialog: MatDialog) { }
+
 
   ngOnInit(): void {
-    console.log(this.movie)
+  }
+  openMovie() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = this.movie;
+    const dialogRef  = this.dialog.open(DialogMovieComponent, dialogConfig);
+    const subscribeDialog = dialogRef.componentInstance.movieSelected.subscribe((movie : Movie) => {
+      console.log('dialog data', movie);
+      this.deleteMovie()
+      //i can see 'hello' from MatDialog
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
+  }
+  deleteMovie()
+  {
+    this.movieSelected.emit(this.movie);
   }
 
 }

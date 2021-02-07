@@ -7,10 +7,12 @@ import {NewMovieComponent} from "../new-movie/new-movie.component";
 @Component({
   selector: 'app-dashboard-movies',
   templateUrl: './dashboard-movies.component.html',
-  styleUrls: ['./dashboard-movies.component.css']
+  styleUrls: ['./dashboard-movies.component.css'],
+
 })
 export class DashboardMoviesComponent implements OnInit {
   movies!: Array<Movie>;
+  movie = {} as Movie;
   constructor(public dialog: MatDialog, private _movieService: MovieService) { }
 
   ngOnInit(): void {
@@ -25,14 +27,53 @@ export class DashboardMoviesComponent implements OnInit {
         {
 
           this.movies = data;
+          console.log(this.movies)
+          console.log()
         }
       },
       error =>
       { }
     );
   }
-  openDialog() {
-    this.dialog.open(NewMovieComponent);
+  onDeleteCharacter(movie: Movie): void
+  {
+    this._movieService.deleteMovie(movie).subscribe(() => this.onGetMovies())
   }
+  deleteCharacter(movie: Movie): void
+  {
+    this.onDeleteCharacter(movie);
+    console.log("Je passe")
+  }
+
+  onSaveMovie(movie: Movie): void
+  {
+    this._movieService.addMovie(movie).subscribe(
+      data =>
+      {
+        if (data)
+        {
+            this.onGetMovies()
+        }
+      },
+      error =>
+      { }
+    );
+  }
+
+
+  openDialog() {
+    const dialogRef = this.dialog.open(NewMovieComponent);
+    const subscribeDialog = dialogRef.componentInstance.newMovieEvent.subscribe((movie : Movie) => {
+      console.log('dialog data', movie);
+      this.movie = movie;
+      this.onSaveMovie(this.movie);
+
+      //i can see 'hello' from MatDialog
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
+  }
+
 }
 

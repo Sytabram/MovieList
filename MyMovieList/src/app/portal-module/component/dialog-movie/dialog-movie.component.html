@@ -1,0 +1,25 @@
+<mat-dialog-content>
+<p (click)="deleteMovie()"><mat-icon>delete_forever</mat-icon></p>
+
+  <div [hidden]="isEditable"
+       class="show_add_character">
+    <table style="width:100%">
+      <td>
+        <img src="https://localhost:5001/movies/{{data.id}}/poster" />
+      </td>
+      <td>
+        <ngb-rating [max]="5" [(rate)]="data.rating" [readonly]="true"></ngb-rating>
+        <h1> {{data.name}} ({{data.year}})</h1>
+        <p>{{data.time}} Minutes</p>
+
+        <p>{{data.description}}</p>
+
+        <p>{{data.category.name}}</p>
+      </td>
+
+
+
+    </table>
+  </div>
+
+</mat-dialog-content>

@@ -30,13 +30,29 @@ export class MovieService {
       "  \"rating\": " +  movie.rating + ",\n" +
       "  \"time\": " + movie.time + ",\n" +
       "  \"categoryID\": [\n" +
-      "    " + movie.categoryID +"\n" +
+      "    " + 0 +"\n" +
       "  ],\n" +
       "  \"stoudioID\": [\n" +
-      "    " + movie.StudioID + "\n" +
+      "    " + 0 + "\n" +
       "  ]\n" +
       "}";
     return this.http
       .post(this.url, json, options);
+  }
+  addPoster(id: number, image: File): Observable<File>
+  {
+    let formData = new FormData();
+    formData.append('file', image, image.name);
+    return this.http.post<File>(this.url + '/'+ id.toString() + '/avatar', formData);
+  }
+  deleteMovie(movie: Movie)
+  {
+    let options = {
+      headers: new HttpHeaders()
+        .set('Content-Type', 'application/json'),
+    }
+
+    return this.http
+      .delete(this.url + "/" + movie.id, options);
   }
 }

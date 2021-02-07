@@ -4,6 +4,7 @@
       <button mat-button (click)="openDialog()">Launch dialog</button>
     </div>
     <app-movies *ngFor="let currentMovie of movies"
+                (movieSelected)="deleteCharacter($event)"
                              [movie]="currentMovie"></app-movies>
   </div>
 

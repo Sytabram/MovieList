@@ -1,6 +1,6 @@
 export interface Studio {
-  Id : number;
-  Name : string;
-  Country : string;
-  Creation_Date : string;
+  id : number;
+  name : string;
+  country : string;
+  creation_date : string;
 }
