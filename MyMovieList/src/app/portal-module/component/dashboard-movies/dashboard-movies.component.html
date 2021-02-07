@@ -1,10 +1,10 @@
 <div id="header">
   <div id="body">
-    <div>
-      <button mat-button (click)="openDialog()">Launch dialog</button>
-    </div>
+    <button mat-button (click)="openDialog()"><mat-icon>add_to_queue</mat-icon></button>
     <app-movies *ngFor="let currentMovie of movies"
-                (movieSelected)="deleteCharacter($event)"
+                (movieDelete)="deleteMovieSelect($event)"
+                (movieEdit)="editMovieSelect($event)"
+                (moviePoster) ="setPoster($event, currentMovie.id)"
                              [movie]="currentMovie"></app-movies>
   </div>
 

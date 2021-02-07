@@ -11,13 +11,14 @@ import { DashboardMoviesComponent } from './component/dashboard-movies/dashboard
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { MatIconModule} from "@angular/material/icon";
 import { NewMovieComponent } from './component/new-movie/new-movie.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import {MatDialogContent, MatDialogModule} from "@angular/material/dialog";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { DialogMovieComponent } from './component/dialog-movie/dialog-movie.component';
+
 
 
 

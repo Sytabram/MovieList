@@ -35,15 +35,23 @@ export class DashboardMoviesComponent implements OnInit {
       { }
     );
   }
-  onDeleteCharacter(movie: Movie): void
+  deleteMovie(movie: Movie): void
   {
     this._movieService.deleteMovie(movie).subscribe(() => this.onGetMovies())
   }
-  deleteCharacter(movie: Movie): void
+  deleteMovieSelect(movie: Movie): void
   {
-    this.onDeleteCharacter(movie);
-    console.log("Je passe")
+    this.deleteMovie(movie);
   }
+  editMovie(movie: Movie): void
+  {
+    this._movieService.editMovie(movie).subscribe(() => this.onGetMovies())
+  }
+  editMovieSelect(movie: Movie): void
+  {
+    this.editMovie(movie);
+  }
+
 
   onSaveMovie(movie: Movie): void
   {
@@ -58,6 +66,23 @@ export class DashboardMoviesComponent implements OnInit {
       error =>
       { }
     );
+  }
+  setPoster(event: any ,id:number):void{
+    if(event != null) {
+
+      let File:FileList = event.target.files;
+      if(File.length>0){
+        this._movieService.addPoster(id,File[0]).subscribe(
+          response=>
+          {
+            console.log(response)
+            this.onGetMovies()
+          },
+          error=>{}
+        );
+      }
+    }
+
   }
 
 

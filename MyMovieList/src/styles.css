@@ -11,3 +11,6 @@ mat-dialog-content{
   color : white;
 
 }
+mat-label {
+  color: white;
+}

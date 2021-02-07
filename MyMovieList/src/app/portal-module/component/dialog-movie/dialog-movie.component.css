@@ -7,6 +7,14 @@ mat-dialog-content {
   max-width: 800px;
   max-height: 800px;
 }
+table {
+  vertical-align: top;
+}
+.Right {
+  max-width: 450px;
+  max-height: 250px;
+  word-break: break-word;
+}
 
 ngb-rating {
   color: #1f9cff;

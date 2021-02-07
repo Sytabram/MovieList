@@ -13,7 +13,9 @@ import {DialogMovieComponent} from "../dialog-movie/dialog-movie.component";
 export class MoviesComponent implements OnInit {
 
   @Input() movie!: Movie;
-  @Output() movieSelected = new EventEmitter<Movie>();
+  @Output() movieDelete = new EventEmitter<Movie>();
+  @Output() movieEdit = new EventEmitter<Movie>();
+  @Output() moviePoster = new EventEmitter<Event>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,18 +26,35 @@ export class MoviesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = this.movie;
     const dialogRef  = this.dialog.open(DialogMovieComponent, dialogConfig);
-    const subscribeDialog = dialogRef.componentInstance.movieSelected.subscribe((movie : Movie) => {
-      console.log('dialog data', movie);
+    const subscribeDialog = dialogRef.componentInstance.movieDelete.subscribe(() => {
       this.deleteMovie()
-      //i can see 'hello' from MatDialog
+
+    });
+    const subscribeEditDialog = dialogRef.componentInstance.movieEdit.subscribe((movieEdit : Movie) => {
+      console.log('dialog data', movieEdit);
+      this.editMovie(movieEdit)
+
+    });
+    const subscribePostDialog = dialogRef.componentInstance.moviePoster.subscribe((event : Event) => {
+      this.posterMovie(event)
+
     });
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      subscribeEditDialog.unsubscribe();
+      subscribePostDialog.unsubscribe();
     });
   }
   deleteMovie()
   {
-    this.movieSelected.emit(this.movie);
+    this.movieDelete.emit(this.movie);
+  }
+  editMovie(movie : Movie)
+  {
+    this.movieEdit.emit(this.movie);
+  }
+  posterMovie (event: any){
+    this.moviePoster.emit(event);
   }
 
 }
