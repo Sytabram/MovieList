@@ -1,14 +1,11 @@
 <div id="body">
   <mat-toolbar>
     <h1>My Movie List</h1>
-      <span href="" [routerLink]="['movies']">Movie</span>
-      <span href="" [routerLink]="['categories']">Category</span>
-      <span href="" [routerLink]="['studios']">Studio</span>
+      <button mat-button href="" [routerLink]="['movies']">Movie</button>
+      <button mat-button href="" [routerLink]="['about']">About</button>
       <span class = "spacer"></span>
-      <span id="logout" (click)="onLogout()"> {{login.username}} <mat-icon>exit_to_app</mat-icon></span>
+      <button mat-button id="logout" (click)="onLogout()"> {{login.username}} <mat-icon>exit_to_app</mat-icon></button>
   </mat-toolbar>
-
-
 </div>
 
 <router-outlet></router-outlet>

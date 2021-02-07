@@ -12,6 +12,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatFormFieldModule,
     MatInputModule,
     NgbModule,
+    MatCardModule,
 
 
   ],

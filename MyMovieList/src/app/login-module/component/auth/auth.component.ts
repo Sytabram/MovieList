@@ -10,9 +10,10 @@ import {Login} from "../../model/login";
 })
 export class AuthComponent implements OnInit {
 
-  login = { username: "user", password: "epsic" } as Login;
+  login = { username: "admin", password: "1234" } as Login;
   isWrongCredentials = false;
 
+  hide = true;
   constructor(private router: Router, private authService: AuthService) {
 
     this.authService.isAuthenticated = false;

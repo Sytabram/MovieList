@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AuthGuard} from "../guard/auth.guard";
 import {PortalComponent} from "./component/portal/portal.component";
-import {MoviesComponent} from "./component/movies/movies.component";
-import {StudiosComponent} from "./component/studios/studios.component";
-import {CategoriesComponent} from "./component/categories/categories.component";
 import {DashboardMoviesComponent} from "./component/dashboard-movies/dashboard-movies.component";
+import {AboutComponent} from "./component/about/about.component";
 
 
 
@@ -18,8 +16,7 @@ const routes: Routes = [
     component: PortalComponent,
     children: [
         { path: '', component: DashboardMoviesComponent },
-        { path: 'studios', component: StudiosComponent },
-        { path: 'categories', component: CategoriesComponent },
+        { path: 'about', component: AboutComponent },
         { path: 'movies', component: DashboardMoviesComponent },
     ]
   }

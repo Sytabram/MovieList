@@ -27,4 +27,6 @@ span {
 .mat-toolbar {
   background: none;
 }
-
+button {
+  color: white;
+}

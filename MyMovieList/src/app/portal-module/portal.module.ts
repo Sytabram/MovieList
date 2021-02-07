@@ -5,8 +5,6 @@ import {BrowserModule} from "@angular/platform-browser";
 import {PortalRoutingModule} from "./portal-routing.module";
 import {FormsModule} from "@angular/forms";
 import { MoviesComponent } from './component/movies/movies.component';
-import { StudiosComponent } from './component/studios/studios.component';
-import { CategoriesComponent } from './component/categories/categories.component';
 import { DashboardMoviesComponent } from './component/dashboard-movies/dashboard-movies.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { MatIconModule} from "@angular/material/icon";
@@ -18,13 +16,20 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { DialogMovieComponent } from './component/dialog-movie/dialog-movie.component';
+import { AboutComponent } from './component/about/about.component';
 
 
 
 
 
 @NgModule({
-  declarations: [PortalComponent, MoviesComponent, StudiosComponent, CategoriesComponent, DashboardMoviesComponent, NewMovieComponent, DialogMovieComponent],
+  declarations: [
+    PortalComponent,
+    MoviesComponent,
+    DashboardMoviesComponent,
+    NewMovieComponent,
+    DialogMovieComponent,
+    AboutComponent],
   imports: [
     CommonModule,
     BrowserModule,

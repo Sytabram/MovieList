@@ -1,14 +1,24 @@
-<p [hidden]="!isWrongCredentials"
-   style="color:red;">Mauvais username ou mot de passe</p>
-<div>
-  <div>
-    <label>Username</label>
-    <input [(ngModel)]="login.username" />
-  </div>
-  <div>
-    <label>Mot de passe</label>
-    <input type="password"
-           [(ngModel)]="login.password" />
-  </div>
-  <button (click)="onLogin()">Login</button>
-</div>
+<body>
+<mat-card>
+  <mat-card-header>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>UserName</mat-label>
+        <input matInput [(ngModel)]="login.username">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="login.password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    <a [hidden]="!isWrongCredentials"
+       style="color:red;">Mauvais username ou mot de passe</a>
+      <button mat-button (click)="onLogin()">Login</button>
+    </p>
+  </mat-card-header>
+</mat-card>
+
+</body>
+

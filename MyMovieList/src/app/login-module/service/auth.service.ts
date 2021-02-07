@@ -13,7 +13,7 @@ export class AuthService {
 
   login(login: Login): void
   {
-    if (login.username == 'user' && login.password == 'epsic')
+    if (login.username == 'admin' && login.password == '1234')
     {
       this.loginModel = login;
       this.isAuthenticated = true;
