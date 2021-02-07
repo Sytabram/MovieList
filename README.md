@@ -9,4 +9,4 @@ Pour lancer (Après avoir lancer l'API) :
 2) ng serve
 3) http://localhost:4200/login
 
-!!!!! Selon le navigateur le site ou certains post peuvent être bloqué. Assuré vous d'accorder les accès au site.
+! Selon le navigateur le site ou certains post peuvent être bloqué. Assuré vous d'accorder les accès au site. !
