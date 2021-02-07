@@ -1,0 +1,14 @@
+mat-card {
+  height: 100vh;
+  width: 300px;
+  background-color: #3d4f65;
+
+}
+body {
+  background-image: url("../../../../assets/image/allMovies.jpg");
+  width: 100%;
+  height: 100vh;
+}
+button {
+  color: white;
+}

@@ -1,0 +1,22 @@
+img {
+  max-width: 100%;
+  width: 350px;
+  height: 550px;
+}
+mat-dialog-content {
+  max-width: 800px;
+  max-height: 800px;
+}
+table {
+  vertical-align: top;
+}
+.Right {
+  max-width: 450px;
+  max-height: 250px;
+  word-break: break-word;
+}
+
+ngb-rating {
+  color: #1f9cff;
+  font-size: 40px;
+}

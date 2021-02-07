@@ -1,0 +1,10 @@
+
+.mat-dialog-content {
+  width: 300px;
+  height: 500px;
+}
+
+ngb-rating {
+  color: #1f9cff;
+  font-size: 40px;
+}

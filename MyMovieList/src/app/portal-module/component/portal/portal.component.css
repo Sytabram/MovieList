@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Simplifica ;  src:url("../../../../assets/font/SIMPLIFICA Typeface.ttf");
+}
+div {
+  background-color: #3d4f65;
+}
+h1 {
+  font-family: Simplifica;
+  color : #8ccda3;
+  margin-left: 40px;
+  font-size: 50px;
+}
+span {
+  color : white;
+  text-decoration: none;
+  margin-left: 15px;
+
+}
+#logout {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  background: none;
+}
+button {
+  color: white;
+}
